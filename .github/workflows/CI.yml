@@ -1,0 +1,27 @@
+name: C++ Tests
+
+on:
+  push:
+    branches:
+      - main  # Adjust this branch name if needed
+  pull_request:
+    branches:
+      - main  # Adjust this branch name if needed
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Set up C++ environment
+      uses: actions/setup-cpp@v2
+
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build
+      run: make  # Adjust the build command if you use a different build system
+
+    - name: Run tests
+      run: make test  # Adjust the test command if you use a different testing framework
+
