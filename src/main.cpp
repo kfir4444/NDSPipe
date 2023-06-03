@@ -3,27 +3,33 @@
 #include <list>
 #include "common.h"
 
-void printMap(const std::map<std::string, int>& map) {
+using namespace std;
+
+void printMap(const map<string, int>& map) {
     for (const auto& pair : map) {
-        std::cout << pair.first << ": " << pair.second << std::endl;
+        cout << pair.first << ": " << pair.second << endl;
     }
 }
 
 int main() {
-    const std::map<std::string, int> myMap = {
+    const map<string, int> myMap = {
         {"apple", 5},
         {"banana", 7},
         {"orange", 3}
     };
 
-    std::map<std::string, int> output = XyzToZamt(myMap);
+    map<string, int> output = XyzToZamt(myMap);
 
-    std::cout << "Printing a map:" << std::endl;
+    cout << "Printing a map:" << endl;
     printMap(output);
 
-    std::vector<double> v1 = {1.0, 2.0, 3.0};
-    std::vector<double> v2 = {3.4, 1.1, 3.14};
-    std::cout << "Printing the distance between the points:" << getDist(v1, v2) << std::endl;
-
+    vector<double> v1 = {0, 1, 0};
+    vector<double> v2 = {0, 0, 0};
+    cout << "Printing the distance between the points:" << getDist(v1, v2) << endl;
+    vector<double> v3 = {1, 0, 0};
+    cout << "Printing the angle between the points:" << getAngle(v1, v2, v3) << endl;
+    vector<double> v4 = {1, 1, 0};
+    cout << "Printing the dngle between the points:" << getDihedralAngle(v1, v2, v3, v4) << endl;
+    
     return 0;
 }
