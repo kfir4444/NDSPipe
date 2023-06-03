@@ -4,22 +4,23 @@
 #include <string>
 #include <vector>
 
+using namespace std;
 
-double getDist(const std::vector<double>& vector1, const std::vector<double>& vector2) {
+double getDist(const vector<double>& vector1, const vector<double>& vector2) {
     double sum = 0.0;
     
     auto it1 = vector1.begin();
     auto it2 = vector2.begin();
 
     for (; it1 != vector1.end() && it2 != vector2.end(); ++it1, ++it2) {
-        sum = sum + std::pow(*it1 - *it2, 2);
+        sum = sum + pow(*it1 - *it2, 2);
     }
     
-    return std::pow(sum, 0.5);
+    return pow(sum, 0.5);
 }
 
 
-double getScalarMult(const std::vector<double>& vector1, const std::vector<double>& vector2) {
+double getScalarMult(const vector<double>& vector1, const vector<double>& vector2) {
     double sum = 0.0;
     
     auto it1 = vector1.begin();
@@ -51,8 +52,8 @@ double getScalarMult(const std::vector<double>& vector1, const std::vector<doubl
 // }
 
 
-std::map<std::string, int> XyzToZamt(const std::map<std::string, int>& inputDict) {
-    std::map<std::string, int> resultDict;
+map<string, int> XyzToZamt(const map<string, int>& inputDict) {
+    map<string, int> resultDict;
 
     for (const auto& pair : inputDict) {
         resultDict[pair.first] = pair.second;
