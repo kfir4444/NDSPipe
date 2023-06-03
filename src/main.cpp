@@ -28,6 +28,8 @@ int main() {
     cout << "Printing the distance between the points:" << getDist(v1, v2) << endl;
     vector<double> v3 = {1, 0, 0};
     cout << "Printing the angle between the points:" << getAngle(v1, v2, v3) << endl;
+    vector<double> v4 = {1, 1, 0};
+    cout << "Printing the dngle between the points:" << getDihedralAngle(v1, v2, v3, v4) << endl;
     
     return 0;
 }
